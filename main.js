@@ -28,7 +28,7 @@ const term = $('body').terminal({
 function ready() {
     const seed = rand(256);
     term.echo(() => rainbow(render('Terminal Website'), seed))
-        .echo('<white>Welcome to my Terminal Website Template</white>\n').resume();
+        .echo('<white>Welcome to Terminal Website Template</white>\n').resume();
 }
 
 function rainbow(string, seed) {
