@@ -13,6 +13,9 @@ You can also click use this template button to create new repository.
 
 ![Screenshot of Terminal Website Template](.github/screenshot.png)
 
+If you want to learn how to create a terminal like this yourself, you can read this article:
+* [How to Create an Interactive Terminal Portfolio Website](https://www.freecodecamp.org/news/how-to-create-an-interactive-terminal-portfolio-website/)
+
 ## License
 Copyright (c) 2024 [Jakub T. Jankiewicz](https://jakub.jankiewicz.org)<br/>
 Released under MIT license
