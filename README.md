@@ -13,7 +13,8 @@ You can also click use this template button to create new repository.
 
 ![Screenshot of Terminal Website Template](.github/screenshot.png)
 
-If you want to learn how to create a terminal like this yourself, you can read this article:
+If you want to learn how to create a terminal like this yourself, you can read those articles:
+* [How to create interactive terminal like website with JavaScript?](https://itnext.io/how-to-create-interactive-terminal-like-website-888bb0972288) (beginner friendly)
 * [How to Create an Interactive Terminal Portfolio Website](https://www.freecodecamp.org/news/how-to-create-an-interactive-terminal-portfolio-website/)
 
 ## License
