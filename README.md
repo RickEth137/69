@@ -1,6 +1,7 @@
 # Terminal Website Template
 
-This is a simple template for a Terminal based website. It uses:
+This is a [simple template for a Terminal based website](https://github.com/jcubic/terminal-website-template).
+It uses:
 
 * [jQuery Terminal](https://terminal.jcubic.pl/)
 * [Figlet.js](https://github.com/patorjk/figlet.js/)
