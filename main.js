@@ -4,11 +4,11 @@ figlet.defaults({ fontPath: 'https://cdn.jsdelivr.net/npm/figlet/fonts' });
 figlet.preloadFonts([font], ready);
 
 // --- Content for Commands ---
-const abstract_title = "ABSTRACT";
-const intro_title = "1. INTRODUCTION: THE SPIRIT OF 69";
-const legacy_title = "2. THE LEGACY: TRACING ETHEREUM'S EARLIEST TOKENS";
-const vision_title = "3. THE VISION: THE ULTIMATE 69 TOKEN";
-const method_title = "4. METHODOLOGY: HOW THE 69TH TOKEN WAS FOUND";
+const abstract_title = "ABSTRACT"; // No change here, as it was already simplified
+const intro_title = "INTRODUCTION";
+const legacy_title = "THE LEGACY";
+const vision_title = "VISION";
+const method_title = "HOW #69 WAS FOUND";
 
 const menu_footer = `\nType <white class="command">menu</white> to return to the main sections.`;
 
