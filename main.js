@@ -4,11 +4,10 @@ figlet.defaults({ fontPath: 'https://cdn.jsdelivr.net/npm/figlet/fonts' });
 figlet.preloadFonts([font], ready);
 
 // --- Content for Commands ---
-
-const abstract_title = "ABSTRACT: $69CNYT";
+const abstract_title = "ABSTRACT";
 const intro_title = "1. INTRODUCTION: THE SPIRIT OF 69";
 const legacy_title = "2. THE LEGACY: TRACING ETHEREUM'S EARLIEST TOKENS";
-const vision_title = "3. THE VISION: $69CNYT - THE ULTIMATE 69 TOKEN";
+const vision_title = "3. THE VISION: THE ULTIMATE 69 TOKEN";
 const method_title = "4. METHODOLOGY: HOW THE 69TH TOKEN WAS FOUND";
 
 const menu_footer = `\nType <white class="command">menu</white> to return to the main sections.`;
@@ -297,10 +296,6 @@ ${(function() {
 
 // --- Help and Greeting ---
 
-const help_header = `######################################################################
-#                        69CNYTOKEN ($69CNYT)                       #
-######################################################################`;
-
 const help_body = `
 Welcome to $69CNYT: The Ultimate 69 Token of All Times.
 A groundbreaking memecoin paying homage to Ethereum's earliest history.
@@ -350,7 +345,9 @@ const commands = {
         this.exec('help', true);
     },
     help() {
-        this.echo(help_header + '\n' + help_body);
+        // Always display the main title with rainbow effect
+        const rainbow_main_title = rainbow(render('69CNYTOKEN'), window.currentSeed);
+        this.echo(rainbow_main_title + '\n' + help_body);
     }
 };
 
@@ -369,7 +366,7 @@ term.on('click', '.command', function() {
 function ready() {
     window.currentSeed = rand(256); // Make seed globally accessible
     term.echo(() => rainbow(render('69CNYTOKEN'), window.currentSeed))
-        .echo(help_header)
+        // The help_body already contains the static header, so we just echo the body
         .echo(help_body)
         .resume();
 }
