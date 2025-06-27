@@ -5,12 +5,15 @@ figlet.preloadFonts([font], ready);
 
 // --- Content for Commands ---
 
+const abstract_title = "ABSTRACT: $69CNYT";
+const intro_title = "1. INTRODUCTION: THE SPIRIT OF 69";
+const legacy_title = "2. THE LEGACY: TRACING ETHEREUM'S EARLIEST TOKENS";
+const vision_title = "3. THE VISION: $69CNYT - THE ULTIMATE 69 TOKEN";
+const method_title = "4. METHODOLOGY: HOW THE 69TH TOKEN WAS FOUND";
+
 const menu_footer = `\nType <white class="command">menu</white> to return to the main sections.`;
 
-const abstract_text = `######################################################################
-#                        ABSTRACT: $69CNYT                           #
-######################################################################
-
+const abstract_content = `
 PROJECT NAME: 69CNYTOKEN
 TOKEN SYMBOL: $69CNYT
 
@@ -24,10 +27,7 @@ Leveraging cutting-edge on-chain analysis, $69CNYT stakes its claim as the
 ULTIMATE 69 Token of All Times, building upon a legacy born from the
 very essence of decentralized innovation.` + menu_footer;
 
-const intro_text = `######################################################################
-#                     1. INTRODUCTION: THE SPIRIT OF 69              #
-######################################################################
-
+const intro_content = `
 In the vast and ever-expanding universe of digital assets, numbers often
 carry more weight than mere digits. The number "69" transcends its numerical
 value to become a cultural icon, representing harmony, balance, and a
@@ -41,10 +41,7 @@ Our mission is to capture the spirit of "69" and elevate it to unprecedented
 heights, creating a community-driven phenomenon built on transparency,
 historical reverence, and and unbridled fun.` + menu_footer;
 
-const legacy_text = `######################################################################
-#                 2. THE LEGACY: TRACING ETHEREUM'S EARLIEST TOKENS  #
-######################################################################
-
+const legacy_content = `
 The Ethereum blockchain officially launched its mainnet in July 2015.
 While ETH was the first asset, rapid smart contract development led to
 user-defined tokens. Identifying the precise chronological order of
@@ -56,7 +53,7 @@ Augur's Reputation ($REP) token stands as one of Ethereum's earliest and
 most historically significant token deployments.
 
 Verified Details of a Key $REP Deployment:
-  Contract Address:   0x6c114b96b7a0e679c2594e3884f11526797e43d1
+  Contract Address:   <a href="https://etherscan.io/address/0x6c114b96b7a0e679c2594e3884f11526797e43d1" target="_blank">0x6c114b96b7a0e679c2594e3884f11526797e43d1</a>
   Token Symbol:       REPUTATION ($REP)
   Deployed By Wallet: 0xd82369aaeC27C7a749AFDb4eb71ADD9E64154cd6
   Deployment Block:   5926236
@@ -71,9 +68,9 @@ the 69th token deployed on the network (by our precise methodology).
 This early contract holds a special place in Ethereum's chronological ledger.
 
 Verified Details of the 69th Ethereum Token:
-  Contract Address:   0x04F61b7a5f73da58ad15C2B1D8b83A3324EC1c90
-  Transaction Hash:   0x1f88c77eca690f2514b34cf27d333f762fe160b1fd9e292fc145794208cb2f9b
-  Creator Wallet:     0x58cBC34576EFC4f2591fbC6258f89961e7e34D48
+  Contract Address:   <a href="https://etherscan.io/address/0x04F61b7a5f73da58ad15C2B1D8b83A3324EC1c90" target="_blank">0x04F61b7a5f73da58ad15C2B1D8b83A3324EC1c90</a>
+  Transaction Hash:   <a href="https://etherscan.io/tx/0x1f88c77eca690f2514b34cf27d333f762fe160b1fd9e292fc145794208cb2f9b" target="_blank">0x1f88c77eca690f2514b34cf27d333f762fe160b1fd9e292fc145794208cb2f9b</a>
+  Creator Wallet:     <a href="https://etherscan.io/address/0x58cBC34576EFC4f2591fbC6258f89961e7e34D48" target="_blank">0x58cBC34576EFC4f2591fbC6258f89961e7e34D48</a>
   Deployment Block:   5927496
 
 (Note: While this contract adheres to ERC-20 functionality, its specific
@@ -86,10 +83,7 @@ fascinating point in time when the Ethereum token ecosystem was rapidly
 expanding. It is this obscure, yet chronologically significant, deployment
 that serves as the spiritual predecessor and inspiration for $69CNYT.` + menu_footer;
 
-const vision_text = `######################################################################
-#            3. THE VISION: $69CNYT - THE ULTIMATE 69 TOKEN          #
-######################################################################
-
+const vision_content = `
 $69CNYT is designed to be the definitive memecoin encapsulating the essence
 of the number 69, drawing power from its cultural resonance and grounding
 itself in the verifiable history of Ethereum's token deployments. We aim to
@@ -108,10 +102,7 @@ Why $69CNYT is the Ultimate 69 Token:
   to anyone interested in participating in the cultural phenomenon without
   complex technical barriers.` + menu_footer;
 
-const method_text = `######################################################################
-#             4. METHODOLOGY: HOW THE 69TH TOKEN WAS FOUND           #
-######################################################################
-
+const method_content = `
 The precise identification of the 69th Ethereum token was achieved through
 rigorous and systematic on-chain analysis using a custom Python script
 powered by web3.py and Alchemy's robust RPC infrastructure. This methodology
@@ -331,11 +322,26 @@ Type 'help' for a list of commands, or choose a section below:
 // --- Commands ---
 
 const commands = {
-    abstract() { this.echo(abstract_text); },
-    intro() { this.echo(intro_text); },
-    legacy() { this.echo(legacy_text); },
-    vision() { this.echo(vision_text); },
-    method() { this.echo(method_text, { keepWords: true }); },
+    abstract() {
+        const rainbow_header = rainbow(render(abstract_title), window.currentSeed);
+        this.echo(rainbow_header + abstract_content);
+    },
+    intro() {
+        const rainbow_header = rainbow(render(intro_title), window.currentSeed);
+        this.echo(rainbow_header + intro_content);
+    },
+    legacy() {
+        const rainbow_header = rainbow(render(legacy_title), window.currentSeed);
+        this.echo(rainbow_header + legacy_content);
+    },
+    vision() {
+        const rainbow_header = rainbow(render(vision_title), window.currentSeed);
+        this.echo(rainbow_header + vision_content);
+    },
+    method() {
+        const rainbow_header = rainbow(render(method_title), window.currentSeed);
+        this.echo(rainbow_header + method_content, { keepWords: true });
+    },
     exit() {
         this.echo("You can now close this terminal session.");
         this.disable();
@@ -361,8 +367,8 @@ term.on('click', '.command', function() {
 });
 
 function ready() {
-    const seed = rand(256);
-    term.echo(() => rainbow(render('69CNYTOKEN'), seed))
+    window.currentSeed = rand(256); // Make seed globally accessible
+    term.echo(() => rainbow(render('69CNYTOKEN'), window.currentSeed))
         .echo(help_header)
         .echo(help_body)
         .resume();
